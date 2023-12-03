@@ -27,7 +27,7 @@ Cart.addCart=(addObj, result)=>{
 
 Cart.getCartUser_Id = (user_id,result) =>{
   sql.query(
-    "SELECT cart.id,cart.user_id,equipment.equip_name,cart.equip_id,equipment.img_url,cart.amount FROM cart INNER JOIN equipment ON cart.equip_id = equipment.id WHERE user_id=?",
+    "SELECT cart.id,cart.user_id,equipment.equip_name,equipment.img_url,cart.amount FROM cart INNER JOIN equipment ON cart.equip_id = equipment.id WHERE user_id=?",
     [user_id],
     (err, res) => {
       if (err) {
